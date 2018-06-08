@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # TODO: change to use it with MySQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # changed from .mysql
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # changed from .mysql
-        # 'NAME': 'polls',
-        # 'USER': 'root',
-        # 'PASSWORD': os.environ['MYSQL_PWD'],
+        'ENGINE': 'django.db.backends.mysql',  # changed from .mysql
+        # 'NAME': os.path.join(BASE_DIR, 'db.mysql'),  # changed from .mysql
+        'NAME': 'polls',
+        'USER': 'root',
+        'PASSWORD': os.environ['MYSQL_PWD'],
+        'HOST': '',
         # 'HOST': '127.0.0.1',
+        'PORT': '',
         # 'PORT': '5432',
     }
 }
