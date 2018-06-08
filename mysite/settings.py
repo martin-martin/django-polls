@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dxv8+1_)1%h(s=1sa@)c33d!65ik#9ao+2=t-7t=sp3a=b9j_u'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,18 +73,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# TODO: change to use it with MySQL
+# TODO: change to use it with PostgrSQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # changed from .mysql
-        # 'NAME': os.path.join(BASE_DIR, 'db.mysql'),  # changed from .mysql
+        'ENGINE': 'django.db.backends.postgresql',  # changed from sqlite3
         'NAME': 'polls',
-        'USER': 'root',
-        'PASSWORD': os.environ['MYSQL_PWD'],
-        'HOST': '',
-        # 'HOST': '127.0.0.1',
+        'USER': 'martin',
+        'PASSWORD': os.environ['POSTGRESQL_PWD'],
+        'HOST': 'localhost',
         'PORT': '',
-        # 'PORT': '5432',
     }
 }
 
